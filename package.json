@@ -1,0 +1,29 @@
+{
+  "name": "interferometry-phase-review",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "光学干涉/相位展开/标定复核系统：包裹相位导入、支路切口、整周候选、表面高度与反例档案",
+  "scripts": {
+    "dev": "tsx server/dev.ts",
+    "build": "vite build",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}
