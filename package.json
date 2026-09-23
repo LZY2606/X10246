@@ -1,0 +1,18 @@
+{
+  "name": "interferogram-review-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "干涉条纹簿：相位展开、支路切口与光学标定分支 —— 可长期复查的光学干涉/相位展开/标定系统",
+  "scripts": {
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dev": "vite",
+    "test": "node --experimental-sqlite scripts/run-tests.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
+  }
+}
