@@ -1,0 +1,19 @@
+{
+  "name": "fringe-book",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "干涉条纹簿：二维相位展开、支路切口与光学标定的可复查系统",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "gen:cases": "node scripts/generate-cases.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  }
+}
