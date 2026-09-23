@@ -1,0 +1,23 @@
+{
+  "name": "fringe-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interferometric phase unwrapping, branch-cut review and optical calibration ledger (offline, immutable, replayable)",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5356 --strictPort",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5356 --strictPort",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.6.3",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  }
+}
