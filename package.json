@@ -1,0 +1,28 @@
+{
+  "name": "pairwise-gsb-interferometry",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "光学干涉/相位展开/标定复核系统（事件溯源 + 不可变基线 + 反例档案）",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "casepack": "vite-node scripts/generate-casepack.ts"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "vite-node": "^3.0.0",
+    "vitest": "^3.0.0"
+  }
+}
