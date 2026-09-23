@@ -34,3 +34,8 @@ coverage/
 .vite/
 .turbo/
 *.tsbuildinfo
+
+# 项目本地数据库与运行产物
+var/
+*.db
+*.db-journal
