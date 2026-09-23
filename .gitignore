@@ -34,3 +34,8 @@ coverage/
 .vite/
 .turbo/
 *.tsbuildinfo
+
+# 本地应用数据（SQLite 数据库与导入暂存），不进仓库
+.data/
+*.sqlite
+*.sqlite-*

@@ -1,0 +1,24 @@
+{
+  "name": "interferogram-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "干涉条纹簿：相位展开、支路切口与光学标定分支（可长期复查）",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "node --experimental-sqlite --no-warnings ./node_modules/vitest/vitest.mjs",
+    "dev": "node --experimental-sqlite --no-warnings ./node_modules/vite/bin/vite.js",
+    "materialize:cases": "node --experimental-sqlite --no-warnings --import tsx scripts/materialize-cases.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}
