@@ -1,0 +1,20 @@
+{
+  "name": "interferogram-book",
+  "private": true,
+  "version": "0.1.0",
+  "description": "光学干涉/相位展开/标定复核系统：干涉条纹簿案例包、反例档案、可回放事件史",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}
