@@ -1,0 +1,18 @@
+{
+  "name": "interferogram-review",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "光学干涉/相位展开/标定复核系统：不可变输入、版本化派生、反例档案与事件溯源",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^5.4.19",
+    "vitest": "^2.1.9"
+  }
+}

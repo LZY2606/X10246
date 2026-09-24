@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>干涉条纹簿 · 相位展开复核台</title>
+    <style>
+      :root { --bg:#101418; --panel:#181d24; --line:#2a323c; --fg:#d8e0e8; --dim:#8b98a6; --acc:#4fc3f7; --warn:#ffb74d; --bad:#ef5350; --ok:#81c784; }
+      * { box-sizing: border-box; }
+      body { margin:0; background:var(--bg); color:var(--fg); font:13px/1.5 "SF Mono", ui-monospace, Menlo, Consolas, monospace; }
+      h1 { font-size:16px; margin:0; } h2 { font-size:13px; margin:0 0 6px; color:var(--acc); }
+      header { display:flex; gap:10px; align-items:center; padding:8px 12px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+      button { background:#232b34; color:var(--fg); border:1px solid var(--line); border-radius:4px; padding:4px 10px; cursor:pointer; font:inherit; }
+      button:hover { border-color:var(--acc); }
+      button.primary { border-color:var(--acc); color:var(--acc); }
+      main { display:grid; grid-template-columns: 300px 1fr 340px; gap:8px; padding:8px; }
+      section { background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:8px; }
+      .grid6 { display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; }
+      canvas { width:100%; image-rendering:pixelated; background:#000; border:1px solid var(--line); cursor:crosshair; }
+      .kv { color:var(--dim); } .kv b { color:var(--fg); font-weight:normal; }
+      .tag { display:inline-block; padding:0 6px; border:1px solid var(--line); border-radius:8px; margin:1px; font-size:11px; }
+      .tag.stale { color:var(--warn); border-color:var(--warn); }
+      .tag.current { color:var(--ok); border-color:var(--ok); }
+      .tag.bad { color:var(--bad); border-color:var(--bad); }
+      .evt { border-left:2px solid var(--line); padding:2px 6px; margin:3px 0; cursor:pointer; }
+      .evt:hover { border-color:var(--acc); }
+      .evt .t { color:var(--dim); font-size:11px; }
+      ul { margin:4px 0; padding-left:16px; } li { margin:2px 0; }
+      .scroll { max-height:260px; overflow:auto; }
+      .row { display:flex; gap:6px; flex-wrap:wrap; align-items:center; margin:4px 0; }
+      .sel { outline:2px solid var(--acc); }
+      #toast { position:fixed; bottom:10px; left:50%; transform:translateX(-50%); background:#232b34; border:1px solid var(--acc); padding:6px 14px; border-radius:4px; display:none; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>干涉条纹簿 · 相位展开 / 支路切口 / 光学标定 复核台</h1>
+      <button id="btn-import-sample" class="primary">导入样例(可复制的包裹相位)</button>
+      <button id="btn-import-casepack">导入离线案例包</button>
+      <button id="btn-run-unwrap">运行展开(当前参数)</button>
+      <button id="btn-revise-params">参数修订(阈值+0.05)</button>
+      <button id="btn-export">导出</button>
+      <button id="btn-reimport">删除本地库再导入</button>
+      <span id="proj" class="kv"></span>
+    </header>
+    <main>
+      <div>
+        <section id="inputs"><h2>基线输入（不可覆盖）</h2><div id="input-list"></div></section>
+        <section id="archive" style="margin-top:8px"><h2>反例档案</h2><div id="archive-list" class="scroll"></div></section>
+        <section id="diag" style="margin-top:8px"><h2>诊断</h2><div id="diag-list" class="scroll"></div></section>
+      </div>
+      <div>
+        <section>
+          <h2>并排复核：包裹相位 / 展开相位 / 质量图 / 切口网络 / 循环残差 / 高度转换链</h2>
+          <div class="grid6">
+            <div><div class="kv">包裹相位 (rad)</div><canvas id="cv-wrapped" width="240" height="240"></canvas></div>
+            <div><div class="kv">展开相位 (rad)</div><canvas id="cv-unwrapped" width="240" height="240"></canvas></div>
+            <div><div class="kv">质量图</div><canvas id="cv-quality" width="240" height="240"></canvas></div>
+            <div><div class="kv">切口网络</div><canvas id="cv-cuts" width="240" height="240"></canvas></div>
+            <div><div class="kv">循环残差</div><canvas id="cv-cycles" width="240" height="240"></canvas></div>
+            <div><div class="kv">表面高度 (µm)</div><canvas id="cv-height" width="240" height="240"></canvas></div>
+          </div>
+          <div id="candidates" class="row"></div>
+          <div id="height-chain" class="kv"></div>
+        </section>
+        <section style="margin-top:8px"><h2>追溯</h2><div id="trace" class="kv">点击任一画布或候选查看来源链。</div></section>
+      </div>
+      <div>
+        <section><h2>裁定 / 局部锁定</h2><div id="decide"></div></section>
+        <section style="margin-top:8px"><h2>事件历史（点击回到当时结论）</h2><div id="events" class="scroll"></div></section>
+      </div>
+    </main>
+    <div id="toast"></div>
+    <script type="module" src="/src/web/main.ts"></script>
+  </body>
+</html>
