@@ -1,0 +1,18 @@
+{
+  "name": "interferometry-stripe-book",
+  "private": true,
+  "version": "0.1.0",
+  "description": "光学干涉/相位展开/标定复核系统：包裹相位导入、支路切口、整周候选、表面高度与反例档案",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "generate:samples": "node scripts/generate-samples.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  }
+}
