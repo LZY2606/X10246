@@ -1,0 +1,22 @@
+{
+  "name": "interferometric-unwrap-review-station",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "干涉条纹簿：相位展开、支路切口与光学标定分支 — 可长期复查的光学干涉/相位展开/标定系统",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit",
+    "test": "vitest"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+  ,
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "~5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
+  }
+}
