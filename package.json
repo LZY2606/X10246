@@ -1,0 +1,26 @@
+{
+  "name": "interferometric-fringe-book",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "干涉条纹簿：相位展开、支路切口与光学标定分支（离线可长期复查）",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "gen:cases": "node tools/generate-cases.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
+  }
+}
