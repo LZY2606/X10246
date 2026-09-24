@@ -1,0 +1,19 @@
+{
+  "name": "fringe-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "干涉条纹簿：相位展开、支路切口与光学标定分支（离线可复查系统）",
+  "scripts": {
+    "dev": "node --disable-warning=ExperimentalWarning server/dev.ts",
+    "test": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "gen:casepack": "node --disable-warning=ExperimentalWarning scripts/gen-casepack.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0",
+    "vitest": "^3.1.0"
+  }
+}
