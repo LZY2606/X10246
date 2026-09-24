@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>干涉条纹簿 · 相位展开复核台</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; background: #101418; color: #d7dee6; }
+      header { padding: 10px 16px; background: #171d24; border-bottom: 1px solid #2a323c; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+      header h1 { font-size: 15px; margin: 0; color: #7fd4ff; }
+      nav button { background: #1f2730; color: #b8c4d0; border: 1px solid #33404d; padding: 4px 10px; border-radius: 4px; cursor: pointer; }
+      nav button.active { background: #274b63; color: #fff; border-color: #4a90c2; }
+      main { padding: 14px 16px; }
+      section { display: none; }
+      section.active { display: block; }
+      .card { background: #171d24; border: 1px solid #2a323c; border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; }
+      .card h3 { margin: 0 0 8px; font-size: 13px; color: #9fc7e8; }
+      table { border-collapse: collapse; width: 100%; }
+      th, td { border: 1px solid #2a323c; padding: 3px 7px; text-align: left; vertical-align: top; }
+      th { color: #8fb8d8; font-weight: 600; }
+      button { background: #23445c; color: #e8f2fa; border: 1px solid #3d6a8c; padding: 3px 10px; border-radius: 4px; cursor: pointer; }
+      button:hover { background: #2d5573; }
+      input, select, textarea { background: #0d1114; color: #d7dee6; border: 1px solid #33404d; border-radius: 4px; padding: 3px 6px; font: inherit; }
+      textarea { width: 100%; min-height: 90px; }
+      .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+      .panel { background: #12181e; border: 1px solid #2a323c; border-radius: 6px; padding: 8px; }
+      .panel h4 { margin: 0 0 6px; font-size: 12px; color: #8fb8d8; }
+      canvas { image-rendering: pixelated; border: 1px solid #2a323c; background: #000; }
+      .tag { display: inline-block; padding: 0 6px; border-radius: 3px; font-size: 11px; margin-right: 4px; }
+      .tag.current { background: #1d4d2e; color: #9fe8b4; }
+      .tag.stale { background: #5c4a1d; color: #f0d489; }
+      .tag.accepted { background: #1d4d2e; color: #9fe8b4; }
+      .tag.rejected { background: #5c1d1d; color: #f0a089; }
+      .tag.locked, .tag.active { background: #274b63; color: #a8d8f8; }
+      .tag.conflicted { background: #5c1d3a; color: #f0a0c8; }
+      .tag.released { background: #333; color: #aaa; }
+      .err { color: #ff9a8a; white-space: pre-wrap; }
+      .okmsg { color: #9fe8b4; }
+      .mono { font-size: 11px; color: #9fb0c0; word-break: break-all; }
+      .chain { color: #c8b8f0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>干涉条纹簿 · 相位展开复核台</h1>
+      <nav id="nav"></nav>
+      <span id="flash"></span>
+    </header>
+    <main id="main"></main>
+    <script type="module" src="/src/web/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{
+ "angle": {
+  "value": 30,
+  "unit": "deg"
+ },
+ "passFactor": 2,
+ "frame": "sample-plane"
+}

@@ -1,0 +1,198 @@
+{
+ "description": "干涉条纹簿重放记录：基线→参数修订→局部源改动→冲突决定→七情形",
+ "steps": [
+  {
+   "op": "commit",
+   "kind": "wrapped_phase",
+   "entityId": "book/wrapped-phase",
+   "file": "baseline/wrapped_phase.json",
+   "meta": {
+    "units": "rad",
+    "note": "HeNe 干涉包裹相位"
+   }
+  },
+  {
+   "op": "commit",
+   "kind": "quality_map",
+   "entityId": "book/quality-map",
+   "file": "baseline/quality_map.json",
+   "meta": {
+    "units": "score:0..1"
+   }
+  },
+  {
+   "op": "commit",
+   "kind": "invalid_mask",
+   "entityId": "book/invalid-mask",
+   "file": "baseline/invalid_mask.json",
+   "meta": {
+    "units": "0/1"
+   }
+  },
+  {
+   "op": "commit",
+   "kind": "wavelength",
+   "entityId": "book/wavelength",
+   "file": "baseline/wavelength.json",
+   "meta": {
+    "units": "nm"
+   }
+  },
+  {
+   "op": "commit",
+   "kind": "incidence_geometry",
+   "entityId": "book/geometry",
+   "file": "baseline/incidence_geometry.json",
+   "meta": {
+    "units": "deg"
+   }
+  },
+  {
+   "op": "commit",
+   "kind": "calibration_plane",
+   "entityId": "book/calibration",
+   "file": "baseline/calibration_plane.json",
+   "meta": {
+    "units": "nm"
+   }
+  },
+  {
+   "op": "commit",
+   "kind": "cut_edit_history",
+   "entityId": "book/cut-edits",
+   "file": "baseline/cut_edit_history.json",
+   "meta": {
+    "units": "edges"
+   }
+  },
+  {
+   "op": "unwrap",
+   "save": "baseline-cands",
+   "phase": "book/wrapped-phase",
+   "quality": "book/quality-map",
+   "mask": "book/invalid-mask",
+   "params": {
+    "strategy": "best-quality"
+   }
+  },
+  {
+   "op": "height",
+   "save": "baseline-height",
+   "candidate": "baseline-cands[0]",
+   "wavelength": "book/wavelength",
+   "geometry": "book/geometry",
+   "calibration": "book/calibration"
+  },
+  {
+   "op": "decide",
+   "result": "baseline-cands[0]",
+   "action": "accept",
+   "reason": "基线展开树循环残差为零，接受为当前解"
+  },
+  {
+   "op": "commit",
+   "kind": "wavelength",
+   "entityId": "book/wavelength",
+   "file": "revisions/wavelength_v2.json",
+   "meta": {
+    "units": "nm",
+    "note": "参数修订：632.8nm → 635.0nm（激光器复标定）"
+   }
+  },
+  {
+   "op": "height",
+   "save": "height-v2",
+   "candidate": "baseline-cands[0]",
+   "wavelength": "book/wavelength",
+   "geometry": "book/geometry",
+   "calibration": "book/calibration"
+  },
+  {
+   "op": "commit",
+   "kind": "quality_map",
+   "entityId": "book/quality-map",
+   "file": "revisions/quality_local_patch.json",
+   "meta": {
+    "units": "score:0..1",
+    "region": {
+     "x": 2,
+     "y": 2,
+     "width": 4,
+     "height": 4
+    },
+    "note": "局部源数据改动：仅 (2,2)-(5,5) 区域重新评分"
+   }
+  },
+  {
+   "op": "run-scenario",
+   "id": "phase-crossing-boundary"
+  },
+  {
+   "op": "run-scenario",
+   "id": "low-amplitude-hole"
+  },
+  {
+   "op": "run-scenario",
+   "id": "multi-connected-region"
+  },
+  {
+   "op": "run-scenario",
+   "id": "cycle-non-closure"
+  },
+  {
+   "op": "run-scenario",
+   "id": "wavelength-version-change"
+  },
+  {
+   "op": "run-scenario",
+   "id": "integer-multi-solution"
+  },
+  {
+   "op": "run-scenario",
+   "id": "local-lock-conflict"
+  },
+  {
+   "op": "decide",
+   "result": "scn:cycle-non-closure[0]",
+   "action": "reject",
+   "reason": "存在未配对残差，循环不闭合未消解"
+  },
+  {
+   "op": "undo-last-decision"
+  },
+  {
+   "op": "lock",
+   "save": "lock-a",
+   "result": "scn:local-lock-conflict[0]",
+   "region": {
+    "x": 4,
+    "y": 4,
+    "width": 6,
+    "height": 4
+   },
+   "kOffsets": {
+    "component:0": 0
+   }
+  },
+  {
+   "op": "lock",
+   "save": "lock-b",
+   "result": "scn:local-lock-conflict[0]",
+   "region": {
+    "x": 6,
+    "y": 4,
+    "width": 4,
+    "height": 4
+   },
+   "kOffsets": {
+    "component:0": 1
+   }
+  },
+  {
+   "op": "resolve-lock",
+   "keep": "lock-b",
+   "drop": "lock-a",
+   "reason": "现场复测支持 component:0 整周偏移为 +1"
+  }
+ ]
+}

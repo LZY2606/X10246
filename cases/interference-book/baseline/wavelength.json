@@ -1,0 +1,7 @@
+{
+ "wavelength": {
+  "value": 632.8,
+  "unit": "nm"
+ },
+ "frame": "sample-plane"
+}

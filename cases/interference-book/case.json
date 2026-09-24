@@ -1,0 +1,25 @@
+{
+ "id": "interference-book",
+ "title": "干涉条纹簿：相位展开、支路切口与光学标定分支",
+ "grid": {
+  "width": 16,
+  "height": 12
+ },
+ "scenarios": [
+  "phase-crossing-boundary",
+  "low-amplitude-hole",
+  "multi-connected-region",
+  "cycle-non-closure",
+  "wavelength-version-change",
+  "integer-multi-solution",
+  "local-lock-conflict"
+ ],
+ "rules": [
+  "low-amplitude-no-guess",
+  "explicit-cut-offsets",
+  "keep-path-and-cycle-residuals",
+  "immutable-inputs",
+  "local-staleness",
+  "no-fallback-to-latest"
+ ]
+}
