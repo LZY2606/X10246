@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>干涉条纹簿 · 相位展开复核台</title>
+    <style>
+      :root { --bg:#0f1420; --panel:#182034; --line:#2a3552; --fg:#dbe4ff; --dim:#8fa0c8; --acc:#5ec1ff; --warn:#ffb454; --bad:#ff6b6b; --ok:#63d68c; }
+      * { box-sizing: border-box; }
+      body { margin:0; font:13px/1.5 "SF Pro Text","PingFang SC",system-ui,sans-serif; background:var(--bg); color:var(--fg); }
+      header { padding:10px 16px; border-bottom:1px solid var(--line); display:flex; gap:8px; align-items:center; flex-wrap:wrap; position:sticky; top:0; background:var(--bg); z-index:5;}
+      h1 { font-size:15px; margin:0 12px 0 0; }
+      h2 { font-size:13px; color:var(--acc); margin:0 0 8px; }
+      button { background:#223055; color:var(--fg); border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer; font-size:12px; }
+      button:hover { border-color:var(--acc); }
+      button.primary { background:#1d4ed8; border-color:#3b82f6; }
+      button.danger { background:#5b2230; border-color:#a33; }
+      main { display:grid; grid-template-columns: 340px 1fr 320px; gap:10px; padding:10px; }
+      section { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:10px; margin-bottom:10px; }
+      .col { min-width:0; }
+      .mono { font-family:ui-monospace,Menlo,monospace; font-size:11px; word-break:break-all; }
+      .dim { color:var(--dim); }
+      .ok { color:var(--ok); } .warn { color:var(--warn); } .bad { color:var(--bad); }
+      table { width:100%; border-collapse:collapse; font-size:12px; }
+      td,th { border-bottom:1px solid var(--line); padding:3px 6px; text-align:left; vertical-align:top;}
+      canvas { image-rendering:pixelated; border:1px solid var(--line); border-radius:4px; background:#000; cursor:crosshair; }
+      .boards { display:flex; flex-wrap:wrap; gap:10px; }
+      .board { display:flex; flex-direction:column; gap:4px; }
+      .board .cap { font-size:12px; color:var(--dim); }
+      textarea { width:100%; height:90px; background:#0c1120; color:var(--fg); border:1px solid var(--line); border-radius:6px; font-family:ui-monospace,monospace; font-size:11px; }
+      select,input[type=text] { background:#0c1120; color:var(--fg); border:1px solid var(--line); border-radius:6px; padding:3px 6px; }
+      .evt { padding:3px 6px; border-bottom:1px solid var(--line); cursor:pointer; }
+      .evt:hover { background:#1d2947; }
+      .evt.undoable { border-left:2px solid var(--warn); }
+      .pill { display:inline-block; padding:0 6px; border-radius:8px; font-size:11px; border:1px solid var(--line); margin-right:4px;}
+      .pill.cur { color:var(--ok); border-color:var(--ok);} .pill.exp { color:var(--warn); border-color:var(--warn);}
+      #toast { position:fixed; bottom:12px; right:12px; background:#223055; border:1px solid var(--acc); padding:8px 12px; border-radius:8px; display:none; max-width:420px;}
+      .kv { display:grid; grid-template-columns:auto 1fr; gap:2px 8px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>干涉条纹簿 · 相位展开复核台</h1>
+      <button id="btn-casepack" class="primary">载入离线案例包</button>
+      <button id="btn-archive">构建反例档案</button>
+      <button id="btn-export">导出档案包</button>
+      <button id="btn-import-bundle">删除本地库并导入</button>
+      <input type="file" id="file-bundle" accept=".json" style="display:none" />
+      <span id="integrity" class="dim"></span>
+    </header>
+    <main>
+      <div class="col">
+        <section>
+          <h2>① 导入（原始表示保留，不可覆盖）</h2>
+          <div style="display:flex;gap:6px;margin-bottom:6px;">
+            <select id="sample-select" style="flex:1"></select>
+            <button id="btn-load-sample">查看样例</button>
+          </div>
+          <textarea id="import-json" placeholder='{"kind":"wrapped_phase","payload":{...}}'></textarea>
+          <div style="display:flex;gap:6px;margin-top:6px;">
+            <button id="btn-import" class="primary">提交导入</button>
+            <button id="btn-verify">核对基线</button>
+          </div>
+          <div id="import-errors" class="bad mono"></div>
+        </section>
+        <section>
+          <h2>② 基线：七类输入（版本 / 摘要）</h2>
+          <table id="baseline-table"></table>
+        </section>
+        <section>
+          <h2>③ 情形触发</h2>
+          <div id="scenario-buttons" style="display:flex;flex-wrap:wrap;gap:4px;"></div>
+        </section>
+        <section>
+          <h2>反例档案</h2>
+          <div id="archive-list" class="dim">尚未构建</div>
+        </section>
+      </div>
+      <div class="col">
+        <section>
+          <h2>④ 复核面板（并排：包裹/展开相位 · 质量图 · 切口网络 · 循环残差 · 高度链）</h2>
+          <div style="display:flex;gap:6px;align-items:center;margin-bottom:8px;flex-wrap:wrap;">
+            <button id="btn-unwrap" class="primary">运行展开</button>
+            <span class="dim">候选</span><select id="candidate-select"></select>
+            <button id="btn-adopt">采纳</button>
+            <button id="btn-reject">拒绝</button>
+            <button id="btn-height">高度转换</button>
+            <span class="dim">锁定者</span><input type="text" id="lock-owner" value="operator-a" size="10" />
+            <button id="btn-lock-mode">圈选锁定区域</button>
+          </div>
+          <div class="boards">
+            <div class="board"><span class="cap">包裹相位 (rad)</span><canvas id="cv-wrapped" width="240" height="240"></canvas></div>
+            <div class="board"><span class="cap">展开相位 + 切口网络（点击圈选锁定）</span><canvas id="cv-unwrapped" width="240" height="240"></canvas></div>
+            <div class="board"><span class="cap">质量图 snr_db（黑=低振幅孔洞，不猜相位）</span><canvas id="cv-quality" width="240" height="240"></canvas></div>
+            <div class="board"><span class="cap">高度链 (nm, surface-normal)</span><canvas id="cv-height" width="240" height="240"></canvas></div>
+          </div>
+          <div id="cycle-list" style="margin-top:8px"></div>
+          <div id="lock-list" style="margin-top:8px"></div>
+        </section>
+        <section>
+          <h2>⑤ 候选与裁定（被采纳与未采纳都保留）</h2>
+          <table id="candidate-table"></table>
+        </section>
+        <section>
+          <h2>⑥ 溯源（任一结果 → 源输入 / 计算步骤 / 人工决定）</h2>
+          <div id="trace" class="mono dim">点击候选表或结果行查看溯源链</div>
+        </section>
+      </div>
+      <div class="col">
+        <section>
+          <h2>⑦ 事件历史（点击回到当时结论）</h2>
+          <div style="margin-bottom:6px;">
+            <button id="btn-back-now">返回当前</button>
+            <span id="time-travel" class="warn"></span>
+          </div>
+          <div id="event-list" style="max-height:70vh;overflow:auto;"></div>
+        </section>
+      </div>
+    </main>
+    <div id="toast"></div>
+    <script type="module" src="/src/web/main.ts"></script>
+  </body>
+</html>

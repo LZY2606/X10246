@@ -1,0 +1,12 @@
+{
+ "kind": "calibration_surface",
+ "payload": {
+  "reference": "cal-frame-2026-09-01",
+  "flatness": {
+   "value": 12.5,
+   "unit": "nm"
+  },
+  "frame": "surface-normal"
+ },
+ "note": "干涉条纹簿样例"
+}

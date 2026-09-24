@@ -1,0 +1,13 @@
+{
+ "kind": "wrapped_phase",
+ "payload": {
+  "width": 2,
+  "height": 2,
+  "values": [
+   1,
+   2,
+   3
+  ]
+ },
+ "note": "格式错误样例：缺 frame/unit 且长度不符"
+}

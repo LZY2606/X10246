@@ -1,0 +1,11 @@
+{
+ "kind": "wavelength",
+ "payload": {
+  "wavelength": {
+   "value": 632.8,
+   "unit": "nm"
+  },
+  "source": "he-ne-laser"
+ },
+ "note": "干涉条纹簿样例"
+}

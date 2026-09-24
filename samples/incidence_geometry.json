@@ -1,0 +1,15 @@
+{
+ "kind": "incidence_geometry",
+ "payload": {
+  "incidenceAngle": {
+   "value": 30,
+   "unit": "deg"
+  },
+  "azimuth": {
+   "value": 0,
+   "unit": "deg"
+  },
+  "frame": "lab-frame"
+ },
+ "note": "干涉条纹簿样例"
+}
