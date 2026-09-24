@@ -1,0 +1,19 @@
+{
+  "name": "interferometry-review-archive",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "光学干涉/相位展开/标定复核与反例档案系统",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "casepack": "node scripts/build-casepack.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  }
+}
