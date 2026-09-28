@@ -1,0 +1,27 @@
+{
+  "name": "interfero-review",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "干涉条纹簿：相位展开、支路切口与光学标定分支 —— 可长期复查的光学干涉系统",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.5",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-express": "^0.20.0",
+    "vitest": "^2.1.8"
+  }
+}
