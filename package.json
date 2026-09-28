@@ -1,0 +1,19 @@
+{
+  "name": "interferometry-branch-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline interferometric phase unwrapping and optical calibration review ledger.",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}
