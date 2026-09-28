@@ -1,0 +1,19 @@
+{
+  "name": "fringe-ledger-review",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Offline interferometric phase unwrapping, branch-cut, and calibration review ledger",
+  "scripts": {
+    "dev": "node --no-warnings server.ts",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest",
+    "casepack": "node scripts/build-case-pack.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
+  }
+}

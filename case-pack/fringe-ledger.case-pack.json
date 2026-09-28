@@ -1,0 +1,1064 @@
+{
+  "schema": "fringe-ledger/offline-case-pack/v1",
+  "title": "干涉条纹簿：相位展开、支路切口与光学标定分支",
+  "generatedAt": "2026-09-28T09:00:00+08:00",
+  "seed": "fringe-ledger-fixed-seed-2026-09-28",
+  "unitsPolicy": "原始单位与坐标基准保留在原片段；派生层才规范化，不能转换的数值留空并带诊断。",
+  "gridGeometry": {
+    "rows": 6,
+    "cols": 6
+  },
+  "immutableBaseline": [
+    "原相位像素",
+    "信噪评分",
+    "无效遮罩",
+    "波长",
+    "入射几何",
+    "标定面",
+    "切口编辑历史"
+  ],
+  "fragments": [
+    {
+      "fragmentId": "frag_b170765607879f92",
+      "role": "wrapped_phase_pixels",
+      "name": "smooth_wrapped_ramp_with_branch",
+      "immutable": true,
+      "contentHash": "3a238ef298b060a5e5033b343332367eaa4ed75fcfc223d4e8c2ad9ebec2fd8e",
+      "content": {
+        "rows": 6,
+        "cols": 6,
+        "values": [
+          -2.8,
+          -2.46,
+          -2.119999999999999,
+          -1.7799999999999994,
+          -1.4399999999999995,
+          -1.0999999999999996,
+          -0.7599999999999998,
+          -0.41999999999999993,
+          -0.08000000000000007,
+          0.2599999999999998,
+          0.6000000000000014,
+          0.9400000000000013,
+          1.2800000000000011,
+          1.620000000000001,
+          1.9600000000000009,
+          2.3000000000000007,
+          2.6400000000000006,
+          2.9800000000000004,
+          -2.963185307179586,
+          -2.623185307179585,
+          -2.2831853071795853,
+          -1.9431853071795855,
+          -1.6031853071795856,
+          -1.2631853071795867,
+          -0.9231853071795868,
+          -0.5831853071795869,
+          -0.24318530717958708,
+          0.09681469282041633,
+          0.4368146928204162,
+          0.776814692820416,
+          1.116814692820416,
+          1.4568146928204158,
+          1.7968146928204156,
+          2.1368146928204155,
+          2.4768146928204153,
+          2.816814692820415
+        ],
+        "unit": "radian",
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left"
+      }
+    },
+    {
+      "fragmentId": "frag_28e7c0ed1f398fac",
+      "role": "amplitude_map",
+      "name": "uniform_high_amplitude",
+      "immutable": true,
+      "contentHash": "1dcf3dfa94b78128319c184564029402c82b6bc25fd175a75dc5350751fda85b",
+      "content": {
+        "rows": 6,
+        "cols": 6,
+        "values": [
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200
+        ],
+        "unit": "adu",
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left"
+      }
+    },
+    {
+      "fragmentId": "frag_7d4352c90f9bb6bd",
+      "role": "signal_quality_scores",
+      "name": "uniform_high_quality",
+      "immutable": true,
+      "contentHash": "0ca96f792565a1ce78fad8335eb7d92b745b860021729032cb84d6032c6828c2",
+      "content": {
+        "rows": 6,
+        "cols": 6,
+        "values": [
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96
+        ],
+        "unit": "score",
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left"
+      }
+    },
+    {
+      "fragmentId": "frag_25713e34c7d8f69a",
+      "role": "invalid_mask",
+      "name": "all_pixels_valid",
+      "immutable": true,
+      "contentHash": "48fc93469c4209bde9fdeba8af91fd9c6509d22e54fdfb21766a8e03120b0cca",
+      "content": {
+        "rows": 6,
+        "cols": 6,
+        "values": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "unit": "boolean",
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left"
+      }
+    },
+    {
+      "fragmentId": "frag_731646da3b655fe5",
+      "role": "wavelength",
+      "name": "helium_neon_632_8_nm_v1",
+      "immutable": true,
+      "contentHash": "432ef75c058870fa09f371af95fbebdd3242f1f9aad4d8c7aecc511be256031f",
+      "content": {
+        "rawValue": 632.8,
+        "rawUnit": "nanometer",
+        "normalizedNanometers": 632.8,
+        "coordinateFrame": "vacuum_wavelength:instrument_metadata"
+      }
+    },
+    {
+      "fragmentId": "frag_5e838f47dea775e6",
+      "role": "illumination_geometry",
+      "name": "normal_incidence_v1",
+      "immutable": true,
+      "contentHash": "c13454bfb2b29883a6ececf0f07bc1d6fd56d959adf431edfb71077c65066c82",
+      "content": {
+        "incidenceAngle": 0,
+        "incidenceAngleUnit": "degree",
+        "azimuth": 0,
+        "azimuthUnit": "degree",
+        "coordinateFrame": "lab_optical_axis_z",
+        "normalizedCosIncidence": 1
+      }
+    },
+    {
+      "fragmentId": "frag_4c35a7ecf7cbd066",
+      "role": "calibration_surface",
+      "name": "zero_plane_phase_bias_v1",
+      "immutable": true,
+      "contentHash": "c966ac7c1223cb05acbcee41a85b61b75282c5202a5e280a4055eb87dd4be9b7",
+      "content": {
+        "model": "plane_phase_bias",
+        "phaseBias": 0,
+        "phaseBiasUnit": "radian",
+        "heightBias": 0,
+        "heightBiasUnit": "nanometer",
+        "coordinateFrame": "calibration_plane:z_zero_at_frame_center"
+      }
+    },
+    {
+      "fragmentId": "frag_57f45d6f9ab36005",
+      "role": "cut_edit_history",
+      "name": "no_edits_v1",
+      "immutable": true,
+      "contentHash": "165a67696ca809583a76daa419acb29a7076d9178d7d41a552f8cd4cc6a755f9",
+      "content": {
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left",
+        "edits": []
+      }
+    },
+    {
+      "fragmentId": "frag_5da1790f89f833cb",
+      "role": "amplitude_map",
+      "name": "low_amplitude_square_hole",
+      "immutable": true,
+      "contentHash": "1d17891d4d841aaaea064921b2cf91196387e4c119614b5be3a150ceba884d54",
+      "content": {
+        "rows": 6,
+        "cols": 6,
+        "values": [
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          18,
+          18,
+          1200,
+          1200,
+          1200,
+          1200,
+          18,
+          18,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200,
+          1200
+        ],
+        "unit": "adu",
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left"
+      }
+    },
+    {
+      "fragmentId": "frag_e3b0ee5dac901afb",
+      "role": "signal_quality_scores",
+      "name": "low_quality_square_hole",
+      "immutable": true,
+      "contentHash": "dc555909b3947c81bdba8d4a6f928021d4ab77c70dd84ad8296f49325f720c69",
+      "content": {
+        "rows": 6,
+        "cols": 6,
+        "values": [
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.08,
+          0.08,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.08,
+          0.08,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96,
+          0.96
+        ],
+        "unit": "score",
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left"
+      }
+    },
+    {
+      "fragmentId": "frag_4c6e54b3d70b910d",
+      "role": "invalid_mask",
+      "name": "square_hole_invalid",
+      "immutable": true,
+      "contentHash": "823697dba3b0a6b26a5c77dbaad8706b4752c389f336dc197f13279658310e41",
+      "content": {
+        "rows": 6,
+        "cols": 6,
+        "values": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "unit": "boolean",
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left"
+      }
+    },
+    {
+      "fragmentId": "frag_9b49ea0847e17f4c",
+      "role": "invalid_mask",
+      "name": "vertical_slit_creates_two_components",
+      "immutable": true,
+      "contentHash": "399b5c5061b31d85a00dce5582ccbe761e6899036bbfaf4a287293c9c8a6d6e1",
+      "content": {
+        "rows": 6,
+        "cols": 6,
+        "values": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "unit": "boolean",
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left"
+      }
+    },
+    {
+      "fragmentId": "frag_e439c686888755f5",
+      "role": "cut_edit_history",
+      "name": "wrong_branch_cut_offset_minus_one",
+      "immutable": true,
+      "contentHash": "d49d78e48fb90b83218ceceb961080ca7009e083a2128cbc4a809fe2b294d5f8",
+      "content": {
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left",
+        "edits": [
+          {
+            "editId": "cut_0001",
+            "edge": {
+              "rowA": 1,
+              "colA": 0,
+              "rowB": 1,
+              "colB": 1
+            },
+            "explicitOffsetTurns": -1,
+            "reason": "OPEN_CYCLE_DIAGNOSTIC_SURFACE_JUMP",
+            "editedAt": "2026-09-28T09:00:00+08:00",
+            "parentEditId": null
+          }
+        ]
+      }
+    },
+    {
+      "fragmentId": "frag_8bbccb70d684a9f0",
+      "role": "wavelength",
+      "name": "revised_633_0_nm_v2",
+      "immutable": true,
+      "contentHash": "11ad99e3f8df73f7116152bb982387ee33161eccf71542f86ff2178e79154a3e",
+      "content": {
+        "rawValue": 633,
+        "rawUnit": "nanometer",
+        "normalizedNanometers": 633,
+        "coordinateFrame": "vacuum_wavelength:instrument_metadata"
+      }
+    },
+    {
+      "fragmentId": "frag_6b295d98c0850a02",
+      "role": "cut_edit_history",
+      "name": "two_legal_integer_offsets",
+      "immutable": true,
+      "contentHash": "8d8959107a56167f35ee7fc96dc647e0fd85cac39f398ce8c48e701eaf094fce",
+      "content": {
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left",
+        "edits": [
+          {
+            "editId": "cut_0101",
+            "edge": {
+              "rowA": 3,
+              "colA": 1,
+              "rowB": 3,
+              "colB": 2
+            },
+            "explicitOffsetTurns": null,
+            "reason": "INTEGER_AMBIGUITY_REQUIRES_CANDIDATES",
+            "editedAt": "2026-09-28T09:00:00+08:00",
+            "parentEditId": null
+          }
+        ]
+      }
+    },
+    {
+      "fragmentId": "frag_37d58fa06bbb81de",
+      "role": "cut_edit_history",
+      "name": "conflicting_local_locks_seed",
+      "immutable": true,
+      "contentHash": "cf0b090d67f830418663bd43bbf9c992c5effb44e84127be82d9b23af0b69bda",
+      "content": {
+        "coordinateFrame": "lab_grid:row_down_col_right_origin_top_left",
+        "edits": [
+          {
+            "editId": "cut_0201",
+            "edge": {
+              "rowA": 2,
+              "colA": 1,
+              "rowB": 2,
+              "colB": 2
+            },
+            "explicitOffsetTurns": null,
+            "reason": "LOCAL_LOCK_CONFLICT_TARGET",
+            "editedAt": "2026-09-28T09:00:00+08:00",
+            "parentEditId": null
+          }
+        ]
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "code": "phase_branch_boundary",
+      "title": "相位跨越边界",
+      "minimalInput": {
+        "inputId": "minput_659847a60eab0664",
+        "scenarioId": "phase_branch_boundary",
+        "interpretationVersion": "fringe-ledger-domain-v1.1",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_28e7c0ed1f398fac"
+          ],
+          "signal_quality_scores": [
+            "frag_7d4352c90f9bb6bd"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_57f45d6f9ab36005"
+          ]
+        }
+      },
+      "combinedInput": {
+        "inputId": "cinput_659847a60eab0664",
+        "scenarioId": "phase_branch_boundary",
+        "interpretationVersion": "fringe-ledger-domain-v2.1",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_5da1790f89f833cb"
+          ],
+          "signal_quality_scores": [
+            "frag_e3b0ee5dac901afb"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_57f45d6f9ab36005"
+          ]
+        }
+      }
+    },
+    {
+      "code": "low_amplitude_hole",
+      "title": "低振幅孔洞",
+      "minimalInput": {
+        "inputId": "minput_34659801e3b3c232",
+        "scenarioId": "low_amplitude_hole",
+        "interpretationVersion": "fringe-ledger-domain-v1.2",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_5da1790f89f833cb"
+          ],
+          "signal_quality_scores": [
+            "frag_e3b0ee5dac901afb"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_57f45d6f9ab36005"
+          ]
+        }
+      },
+      "combinedInput": {
+        "inputId": "cinput_34659801e3b3c232",
+        "scenarioId": "low_amplitude_hole",
+        "interpretationVersion": "fringe-ledger-domain-v2.2",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_5da1790f89f833cb"
+          ],
+          "signal_quality_scores": [
+            "frag_e3b0ee5dac901afb"
+          ],
+          "invalid_mask": [
+            "frag_4c6e54b3d70b910d"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_57f45d6f9ab36005"
+          ]
+        }
+      }
+    },
+    {
+      "code": "multiply_connected_region",
+      "title": "多连通区",
+      "minimalInput": {
+        "inputId": "minput_9d6d85cd4ed552c6",
+        "scenarioId": "multiply_connected_region",
+        "interpretationVersion": "fringe-ledger-domain-v1.3",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_28e7c0ed1f398fac"
+          ],
+          "signal_quality_scores": [
+            "frag_7d4352c90f9bb6bd"
+          ],
+          "invalid_mask": [
+            "frag_9b49ea0847e17f4c"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_57f45d6f9ab36005"
+          ]
+        }
+      },
+      "combinedInput": {
+        "inputId": "cinput_9d6d85cd4ed552c6",
+        "scenarioId": "multiply_connected_region",
+        "interpretationVersion": "fringe-ledger-domain-v2.3",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_28e7c0ed1f398fac"
+          ],
+          "signal_quality_scores": [
+            "frag_7d4352c90f9bb6bd"
+          ],
+          "invalid_mask": [
+            "frag_9b49ea0847e17f4c"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_57f45d6f9ab36005"
+          ]
+        }
+      }
+    },
+    {
+      "code": "open_cycle",
+      "title": "循环不闭合",
+      "minimalInput": {
+        "inputId": "minput_d9f9bd81703886fb",
+        "scenarioId": "open_cycle",
+        "interpretationVersion": "fringe-ledger-domain-v1.4",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_28e7c0ed1f398fac"
+          ],
+          "signal_quality_scores": [
+            "frag_7d4352c90f9bb6bd"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_e439c686888755f5"
+          ]
+        }
+      },
+      "combinedInput": {
+        "inputId": "cinput_d9f9bd81703886fb",
+        "scenarioId": "open_cycle",
+        "interpretationVersion": "fringe-ledger-domain-v2.4",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_5da1790f89f833cb"
+          ],
+          "signal_quality_scores": [
+            "frag_e3b0ee5dac901afb"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_e439c686888755f5"
+          ]
+        }
+      }
+    },
+    {
+      "code": "wavelength_version_change",
+      "title": "波长版本变更",
+      "minimalInput": {
+        "inputId": "minput_19db38c3ca138e6e",
+        "scenarioId": "wavelength_version_change",
+        "interpretationVersion": "fringe-ledger-domain-v1.5",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_28e7c0ed1f398fac"
+          ],
+          "signal_quality_scores": [
+            "frag_7d4352c90f9bb6bd"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_8bbccb70d684a9f0"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_57f45d6f9ab36005"
+          ]
+        }
+      },
+      "combinedInput": {
+        "inputId": "cinput_19db38c3ca138e6e",
+        "scenarioId": "wavelength_version_change",
+        "interpretationVersion": "fringe-ledger-domain-v2.5",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_5da1790f89f833cb"
+          ],
+          "signal_quality_scores": [
+            "frag_e3b0ee5dac901afb"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_8bbccb70d684a9f0"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_57f45d6f9ab36005"
+          ]
+        }
+      }
+    },
+    {
+      "code": "integer_ambiguity",
+      "title": "整周多解",
+      "minimalInput": {
+        "inputId": "minput_0d17936a447f3c5e",
+        "scenarioId": "integer_ambiguity",
+        "interpretationVersion": "fringe-ledger-domain-v1.6",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_28e7c0ed1f398fac"
+          ],
+          "signal_quality_scores": [
+            "frag_7d4352c90f9bb6bd"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_6b295d98c0850a02"
+          ]
+        }
+      },
+      "combinedInput": {
+        "inputId": "cinput_0d17936a447f3c5e",
+        "scenarioId": "integer_ambiguity",
+        "interpretationVersion": "fringe-ledger-domain-v2.6",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_5da1790f89f833cb"
+          ],
+          "signal_quality_scores": [
+            "frag_e3b0ee5dac901afb"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_6b295d98c0850a02"
+          ]
+        }
+      }
+    },
+    {
+      "code": "local_lock_conflict",
+      "title": "局部锁定冲突",
+      "minimalInput": {
+        "inputId": "minput_69b202a5ba7f5699",
+        "scenarioId": "local_lock_conflict",
+        "interpretationVersion": "fringe-ledger-domain-v1.7",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_28e7c0ed1f398fac"
+          ],
+          "signal_quality_scores": [
+            "frag_7d4352c90f9bb6bd"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_37d58fa06bbb81de"
+          ]
+        }
+      },
+      "combinedInput": {
+        "inputId": "cinput_69b202a5ba7f5699",
+        "scenarioId": "local_lock_conflict",
+        "interpretationVersion": "fringe-ledger-domain-v2.7",
+        "fragmentBindings": {
+          "wrapped_phase_pixels": [
+            "frag_b170765607879f92"
+          ],
+          "amplitude_map": [
+            "frag_5da1790f89f833cb"
+          ],
+          "signal_quality_scores": [
+            "frag_e3b0ee5dac901afb"
+          ],
+          "invalid_mask": [
+            "frag_25713e34c7d8f69a"
+          ],
+          "wavelength": [
+            "frag_731646da3b655fe5"
+          ],
+          "illumination_geometry": [
+            "frag_5e838f47dea775e6"
+          ],
+          "calibration_surface": [
+            "frag_4c35a7ecf7cbd066"
+          ],
+          "cut_edit_history": [
+            "frag_37d58fa06bbb81de"
+          ]
+        }
+      }
+    }
+  ],
+  "replay": [
+    {
+      "sequence": 1,
+      "event": "BASELINE_IMPORTED",
+      "description": "导入七类不可覆盖原始实体。"
+    },
+    {
+      "sequence": 2,
+      "event": "PARAMETER_REVISED",
+      "description": "把振幅/质量阈值从宽阈值修订到实验阈值。"
+    },
+    {
+      "sequence": 3,
+      "event": "LOCAL_SOURCE_CHANGED",
+      "description": "仅新增低振幅孔洞片段，只让直接依赖运行过期。"
+    },
+    {
+      "sequence": 4,
+      "event": "CONFLICTING_HUMAN_DECISION",
+      "description": "对同一支路记录两个不同整周锁定。"
+    },
+    {
+      "sequence": 5,
+      "event": "FINAL_REVIEW_EXPORT_REIMPORT",
+      "description": "并排复核后导出、删除本地数据库并重新导入。"
+    }
+  ],
+  "checksum": "df9cfb0997da49c08d4bb305199d0683be014152b9dc7a0cf8926a9df05ca001"
+}
