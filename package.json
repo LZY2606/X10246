@@ -1,0 +1,19 @@
+{
+  "name": "interferometry-review",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "光学干涉/相位展开/标定复核系统：不可变输入、支路切口展开、整周候选与高度转换链",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest",
+    "build": "vite build",
+    "casepack:generate": "node casepack/generate.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.6.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
+  }
+}
