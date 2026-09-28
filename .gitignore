@@ -34,3 +34,7 @@ coverage/
 .vite/
 .turbo/
 *.tsbuildinfo
+
+# 运行期本地数据库
+.runtime/
+data/runtime/
